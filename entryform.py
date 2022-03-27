@@ -28,24 +28,21 @@ myframe.pack(expand="true")
 button_frame=Frame(root,height=300)
 button_frame.pack(padx=1, pady=1, expand="true")
 
+'''clean leters in entry'''
 def clean_entry(e):
     entryname.delete(0, END)
     entryname.config(fg="white")
 
-'''def clean_lastname(e):
-    entrylastname.delete(0, END)
-    entrylastname.config(fg="red")
-
-def clean_email(e):
-    entry_email.delete(0, END)
-    entry_email.config(fg="purple")'''
 
 def clean_pass(e):
     entrypass.delete(0, END)    
     entrypass.config(fg="blue", show="*")
     
 
+'''Funtios of buttons'''
 
+def close():
+    root.destroy()
 
 
 
@@ -57,8 +54,6 @@ def clean_pass(e):
 
 
 name_text="First name"
-lastname_text="Last name"
-email_text="Email"
 pass_text="Password"
 
 
@@ -71,17 +66,7 @@ entryname.grid(row=1,column=0, sticky="nsew",columnspan=2)
 entryname.insert(0,name_text)
 entryname.bind("<FocusIn>",clean_entry)
 
-'''entrylastname=Entry(myframe, fg="black", bg="#0E9FD0",width=40,font=(30))
-entrylastname.grid(row=2,column=0, sticky="nsew",columnspan=2)
-entrylastname.delete(0, END)
-entrylastname.insert(0, lastname_text)
-entrylastname.bind("<FocusIn>", clean_lastname)
 
-entry_email=Entry(myframe, fg="black", bg="#0E9FD0",width=40,font=(30))
-entry_email.grid(row=3,column=0, sticky="nsew",columnspan=2)
-entry_email.delete(0, END)
-entry_email.insert(0, email_text)
-entry_email.bind("<FocusIn>", clean_email)'''
 
 
 entrypass=Entry(myframe, fg="black", bg="#0E9FD0",width=40,font=(30))
@@ -103,7 +88,7 @@ create_button=Button(button_frame,text="Create user",font=20)
 create_button.grid(row=1, column=0, columnspan=2, sticky="we")
 
 
-exit_button=Button(button_frame,text="Exit",font=20)
+exit_button=Button(button_frame,text="Exit",font=20,command=close)
 exit_button.grid(row=2, column=0, columnspan=2, sticky="we")
 
 root.mainloop()
