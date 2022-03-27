@@ -176,7 +176,7 @@ def login():
     if data in value :
         messagebox.showinfo("good","exito")
     else:
-        messagebox.showerror("nope","no yet")      
+        messagebox.showerror("Oops","Acount already exist or wrong name and password ")      
 names=StringVar()
 passwords=StringVar()
 
